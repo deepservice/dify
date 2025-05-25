@@ -361,7 +361,7 @@ x-shared-env: &shared-api-worker-env
   PGDATA: ${PGDATA:-/var/lib/postgresql/data/pgdata}
   SANDBOX_API_KEY: ${SANDBOX_API_KEY:-dify-sandbox}
   SANDBOX_GIN_MODE: ${SANDBOX_GIN_MODE:-release}
-  SANDBOX_WORKER_TIMEOUT: ${SANDBOX_WORKER_TIMEOUT:-15}
+  SANDBOX_WORKER_TIMEOUT: ${SANDBOX_WORKER_TIMEOUT:-600}
   SANDBOX_ENABLE_NETWORK: ${SANDBOX_ENABLE_NETWORK:-true}
   SANDBOX_HTTP_PROXY: ${SANDBOX_HTTP_PROXY:-http://ssrf_proxy:3128}
   SANDBOX_HTTPS_PROXY: ${SANDBOX_HTTPS_PROXY:-http://ssrf_proxy:3128}
@@ -624,7 +624,7 @@ services:
       # You can generate a strong key using `openssl rand -base64 42`.
       API_KEY: ${SANDBOX_API_KEY:-dify-sandbox}
       GIN_MODE: ${SANDBOX_GIN_MODE:-release}
-      WORKER_TIMEOUT: ${SANDBOX_WORKER_TIMEOUT:-15}
+      WORKER_TIMEOUT: ${SANDBOX_WORKER_TIMEOUT:-600}
       ENABLE_NETWORK: ${SANDBOX_ENABLE_NETWORK:-true}
       HTTP_PROXY: ${SANDBOX_HTTP_PROXY:-http://ssrf_proxy:3128}
       HTTPS_PROXY: ${SANDBOX_HTTPS_PROXY:-http://ssrf_proxy:3128}
